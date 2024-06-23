@@ -26,12 +26,12 @@ while gameon:
     for car in Car.all_cars:
         if car.distance(player) < 20:
             gameon = False
+            scoreboard.game_over()
 
     if player.at_finish():
         player.start()
         Car.level()
-
-
+        scoreboard.increase_level()
 
 
 
